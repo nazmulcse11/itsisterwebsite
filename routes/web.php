@@ -18,4 +18,20 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/dashborad',[DashboardController::class,'dashboard']);
+
+
+
+
+Auth::routes();
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+
+Route::get('/register', function () {
+    return redirect('/');
+});
+
+
+//Admin routes
+Route::group(['prefix'=>'admin','middleware'=>'auth'],function(){
+    Route::get('/dashboard',[DashboardController::class,'dashboard']);
+});
