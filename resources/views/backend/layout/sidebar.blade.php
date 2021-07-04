@@ -18,5 +18,11 @@
            <i class="fas fa-fw fa-tachometer-alt"></i>
            <span>Dashboard</span></a>
    </li>
+
+   <li class="nav-item active">
+    <a class="nav-link" href="{{ url('/admin/slider') }}">
+        <i class="fas fa-fw fa-tachometer-alt"></i>
+        <span>Slider</span></a>
+</li>
 </ul>
 <!-- End of Sidebar -->

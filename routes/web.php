@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Backend\DashboardController;
+use App\Http\Controllers\Backend\SliderController;
 
 /*
 |--------------------------------------------------------------------------
@@ -34,4 +35,8 @@ Route::get('/register', function () {
 //Admin routes
 Route::group(['prefix'=>'admin','middleware'=>'auth'],function(){
     Route::get('/dashboard',[DashboardController::class,'dashboard']);
+    Route::get('/slider',[SliderController::class,'slider']);
+
+    Route::match(['get','post'],'/add-slider',[SliderController::class,'addSlider']);
+
 });
