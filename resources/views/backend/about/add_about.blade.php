@@ -1,6 +1,6 @@
 @extends('backend.layout.app')
 
-@section('title','Add Slider')
+@section('title','Add About')
  
 
 @section('main-content')
@@ -9,12 +9,12 @@
 
    <!-- Page Heading -->
    <div class="d-sm-flex align-items-center justify-content-between mb-4">
-       <h1 class="h3 mb-0 text-gray-800">Add Slider</h1>
+       <h1 class="h3 mb-0 text-gray-800">Add About</h1>
    </div>
 
    <div class="card shadow mb-4">
       <div class="card-header py-3">
-          <a class="btn btn-primary btn-sm" href="{{ url('admin/slider') }}">Back to Sliderr</a>
+          <a class="btn btn-primary btn-sm" href="{{ url('admin/about') }}">Back to Sliderr</a>
       </div>
       <div class="card-body">
          <div class="container">
@@ -29,7 +29,7 @@
                         </ul>
                      </div>
                   @endif
-                  <form action="{{url('admin/add-slider')}}" method="post" enctype="multipart/form-data">
+                  <form action="{{url('admin/add-about')}}" method="post">
                    @csrf 
                      <div class="form-group">
                         <label for="title">Title</label>
@@ -37,17 +37,12 @@
                      </div>
 
                      <div class="form-group">
-                        <label for="sub_title">Sub Title</label>
-                        <input type="text" name="sub_title" class="form-control" placeholder="Enter Sub Title">
+                        <label for="description">Description</label>
+                        <textarea name="description" class="form-control" rows="6"></textarea>
                      </div>
 
                      <div class="form-group">
-                        <label for="title">Image</label>
-                        <input type="file" name="image" class="form-control">
-                     </div>
-
-                     <div class="form-group">
-                        <input type="submit" value="Add Slider" class="btn btn-primary">
+                        <input type="submit" value="Add About" class="btn btn-primary">
                      </div>
 
                   </form>

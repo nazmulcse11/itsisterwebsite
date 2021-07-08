@@ -23,6 +23,12 @@
     <a class="nav-link" href="{{ url('/admin/slider') }}">
         <i class="fas fa-fw fa-tachometer-alt"></i>
         <span>Slider</span></a>
-</li>
+    </li>
+
+    <li class="nav-item active">
+        <a class="nav-link" href="{{ url('/admin/about') }}">
+            <i class="fas fa-fw fa-tachometer-alt"></i>
+            <span>About</span></a>
+        </li>
 </ul>
 <!-- End of Sidebar -->

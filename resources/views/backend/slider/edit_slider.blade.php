@@ -9,7 +9,7 @@
 
    <!-- Page Heading -->
    <div class="d-sm-flex align-items-center justify-content-between mb-4">
-       <h1 class="h3 mb-0 text-gray-800">Add Slider</h1>
+       <h1 class="h3 mb-0 text-gray-800">Edit Slider</h1>
    </div>
 
    <div class="card shadow mb-4">
@@ -29,16 +29,16 @@
                         </ul>
                      </div>
                   @endif
-                  <form action="{{url('admin/add-slider')}}" method="post" enctype="multipart/form-data">
+                  <form action="{{url('admin/edit-slider/'.$editData['id'])}}" method="post" enctype="multipart/form-data">
                    @csrf 
                      <div class="form-group">
                         <label for="title">Title</label>
-                        <input type="text" name="title" class="form-control" placeholder="Enter Title">
+                        <input type="text" name="title" class="form-control" value="{{ $editData['title'] }}" placeholder="Enter Title">
                      </div>
 
                      <div class="form-group">
                         <label for="sub_title">Sub Title</label>
-                        <input type="text" name="sub_title" class="form-control" placeholder="Enter Sub Title">
+                        <input type="text" name="sub_title" class="form-control" value="{{ $editData['sub_title'] }}" placeholder="Enter Sub Title">
                      </div>
 
                      <div class="form-group">
@@ -47,7 +47,7 @@
                      </div>
 
                      <div class="form-group">
-                        <input type="submit" value="Add Slider" class="btn btn-primary">
+                        <input type="submit" value="Edit Slider" class="btn btn-primary">
                      </div>
 
                   </form>

@@ -51,14 +51,22 @@
                       @foreach($sliders as $key=>$slider)
                       <tr>
                          <td>{{ $key+1 }}</td>
-                         <td>{{ $slider['title']}}</td>
-                         <td>{{ $slider['sub_title']}}</td>
-                         <td>{{ $slider['status']}}</td>
-                         <td>no-image</td>
+                         <td>{{ Str::limit($slider['title'],20) }}</td>
+                         <td>{{ Str::limit($slider['sub_title'],20) }}</td>
+
                          <td>
-                            <a class="btn btn-success btn-sm" href=""><i class="fa fa-eye"></i></a>
-                            <a class="btn btn-primary btn-sm" href=""><i class="fa fa-edit"></i></a>
-                            <a class="btn btn-danger btn-sm" href=""><i class="fa fa-times"></i></a>
+                             @if($slider['status'] == 0)
+                             <a class="btn btn-danger btn-sm" href="{{ url('/admin/update-slider-status/'.$slider['id']) }}" onclick="return confirm('Are you sure to change status !')">Inactive</a>
+                             @else 
+                             <a class="btn btn-success btn-sm" href="{{ url('/admin/update-slider-status/'.$slider['id']) }}" onclick="return confirm('Are you sure to change status !')">Active</a>
+                             @endif
+                         </td>
+
+                         <td><img style="width:50px;" src="{{ asset('images/slider/'.$slider['image'] ) }}" alt="{{$slider['image']}}"></td>
+                         <td>
+                            <a class="btn btn-success btn-sm" href="{{ url('/admin/view-slider-details/'.$slider['id']) }}"><i class="fa fa-eye"></i></a>
+                            <a class="btn btn-primary btn-sm" href="{{ url('admin/edit-slider/'.$slider['id']) }}"><i class="fa fa-edit"></i></a>
+                            <a class="btn btn-danger btn-sm" href="{{ url('admin/delete-slider/'.$slider['id']) }}" onclick="return confirm('Are you sure to delete !!')"><i class="fa fa-times"></i></a>
                          </td>
                      </tr>
                      @endforeach
