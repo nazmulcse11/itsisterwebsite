@@ -70,7 +70,7 @@ class AboutController extends Controller
 
       // delete about
       public function deleteAbout($id=null){
-        $slider = About::findOrFail($id)->delete();
+        $about = About::findOrFail($id)->delete();
         Session::flash('message','About Successfully Deleted');
         return redirect('/admin/about');
      }

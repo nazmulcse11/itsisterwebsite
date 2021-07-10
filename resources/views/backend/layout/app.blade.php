@@ -75,6 +75,13 @@
     <!-- Page level custom scripts -->
     <script src="{{ asset('backend/js/demo/datatables-demo.js') }}"></script>
 
+    <!-- ck editior -->
+    <script src="{{ asset('backend/js/ckeditor/config.js') }}"></script>
+    <script src="{{ asset('backend/js/ckeditor/ckeditor.js') }}"></script>
+    <script>
+        CKEDITOR.replace( 'description' );
+    </script>
+
 </body>
 
 </html>

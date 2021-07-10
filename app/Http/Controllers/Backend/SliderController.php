@@ -16,7 +16,8 @@ class SliderController extends Controller
         $sliders = Slider::latest()->get()->toArray();
         return view('backend.slider.slider',compact('sliders'));
     }
-
+    
+    // Add Slider
     public function addSlider(Request $request){
         if($request->isMethod('post')){
             $data = $request->all();

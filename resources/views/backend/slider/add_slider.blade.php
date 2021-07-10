@@ -14,7 +14,7 @@
 
    <div class="card shadow mb-4">
       <div class="card-header py-3">
-          <a class="btn btn-primary btn-sm" href="{{ url('admin/slider') }}">Back to Sliderr</a>
+          <a class="btn btn-primary btn-sm" href="{{ url('admin/slider') }}">Back to Slider</a>
       </div>
       <div class="card-body">
          <div class="container">

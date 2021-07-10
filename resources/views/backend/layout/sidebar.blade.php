@@ -27,8 +27,33 @@
 
     <li class="nav-item active">
         <a class="nav-link" href="{{ url('/admin/about') }}">
-            <i class="fas fa-fw fa-tachometer-alt"></i>
-            <span>About</span></a>
-        </li>
+        <i class="fas fa-fw fa-tachometer-alt"></i>
+        <span>About</span></a>
+    </li>
+
+    <li class="nav-item active">
+        <a class="nav-link" href="{{ url('/admin/service') }}">
+        <i class="fas fa-fw fa-tachometer-alt"></i>
+        <span>Service</span></a>
+    </li>
+
+    <li class="nav-item active">
+        <a class="nav-link" href="{{ url('/admin/courses') }}">
+        <i class="fas fa-fw fa-tachometer-alt"></i>
+        <span>Courses</span></a>
+    </li>
+
+    <li class="nav-item active">
+        <a class="nav-link" href="{{ url('/admin/posts') }}">
+        <i class="fas fa-fw fa-tachometer-alt"></i>
+        <span>Post</span></a>
+    </li>
+
+    <li class="nav-item active">
+        <a class="nav-link" href="{{ url('/admin/user') }}">
+        <i class="fas fa-user"></i>
+        <span>User</span></a>
+    </li>
+
 </ul>
 <!-- End of Sidebar -->
