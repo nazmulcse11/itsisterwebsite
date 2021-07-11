@@ -20,19 +20,21 @@ class AboutController extends Controller
             $data = $request->all();
 
             $rules = [
-                'title'=>'required|max:190',
+                'who_we_are'=>'required',
+                'why_choose_us'=>'required',
                 'description'=>'required',
             ];
             $customMessage = [
-                'title.required'=>'Title is required',
-                'title.max'=>'Title must not contain more than 190 charecters',
-                'description.required'=>'Sub title is required',
+                'who_we_are.required'=>'Who we are is required',
+                'why_choose_us.required'=>'Why choose us is required',
+                'description.required'=>'Description is required',
             ];
 
             $this->validate($request,$rules,$customMessage);
 
             $about = new About();
-            $about->title = $data['title'];
+            $about->who_we_are = $data['who_we_are'];
+            $about->why_choose_us = $data['why_choose_us'];
             $about->description = $data['description'];
             $about->save();
             Session::flash('message','About Successfully Added');
@@ -48,18 +50,20 @@ class AboutController extends Controller
             $data = $request->all();
 
             $rules = [
-                'title'=>'required|max:190',
+                'who_we_are'=>'required',
+                'why_choose_us'=>'required',
                 'description'=>'required',
             ];
             $customMessage = [
-                'title.required'=>'Title is required',
-                'title.max'=>'Title must not contain more than 190 charecters',
-                'description.required'=>'Sub title is required',
+                'who_we_are.required'=>'Who we are is required',
+                'why_choose_us.required'=>'Why choose us is required',
+                'description.required'=>'Description is required',
             ];
             $this->validate($request,$rules,$customMessage);
 
             $about = About::findOrFail($id);
-            $about->title = $data['title'];
+            $about->who_we_are = $data['who_we_are'];
+            $about->why_choose_us = $data['why_choose_us'];
             $about->description = $data['description'];
             $about->save();
             Session::flash('message','About Successfully Updated');

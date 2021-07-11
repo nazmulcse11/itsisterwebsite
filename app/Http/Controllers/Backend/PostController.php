@@ -111,8 +111,9 @@ class PostController extends Controller
         $deleteImage = 'images/post/'.$post['image'];
                  if(file_exists($deleteImage)){
                      File::delete($deleteImage);
-                     $post->delete();
+                     
                  }
+             $post->delete();
              Session::flash('message','Post Successfully Deleted');
              return redirect('/admin/posts');
      }

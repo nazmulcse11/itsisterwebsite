@@ -15,8 +15,8 @@ class AboutTableSeeder extends Seeder
     public function run()
     {
         $abouts = [
-            ['id'=>'1','title'=>'Title One','description'=>'Descriptione'],
-            ['id'=>'2','title'=>'Title Two','description'=>'Test'],
+            ['id'=>'1','who_we_are'=>'Title One','why_choose_us'=>'abc','description'=>'Descriptione'],
+            ['id'=>'2','who_we_are'=>'Title One','why_choose_us'=>'abc','description'=>'Descriptione'],
         ];
         About::insert($abouts);
     }

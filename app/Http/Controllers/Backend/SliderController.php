@@ -104,8 +104,8 @@ class SliderController extends Controller
        $deleteImage = 'images/slider/'.$slider['image'];
                 if(file_exists($deleteImage)){
                     File::delete($deleteImage);
-                    $slider->delete();
                 }
+            $slider->delete();
             Session::flash('message','Slider Successfully Deleted');
             return redirect('/admin/slider');
     }

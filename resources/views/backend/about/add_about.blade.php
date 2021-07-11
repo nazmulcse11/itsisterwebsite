@@ -14,12 +14,12 @@
 
    <div class="card shadow mb-4">
       <div class="card-header py-3">
-          <a class="btn btn-primary btn-sm" href="{{ url('admin/about') }}">Back to Sliderr</a>
+          <a class="btn btn-primary btn-sm" href="{{ url('admin/about') }}">Back to About</a>
       </div>
       <div class="card-body">
          <div class="container">
             <div class="row">
-               <div class="col-md-6">
+               <div class="col-md-12">
                   @if ($errors->any())
                      <div class="alert alert-danger">
                         <ul>
@@ -32,13 +32,17 @@
                   <form action="{{url('admin/add-about')}}" method="post">
                    @csrf 
                      <div class="form-group">
-                        <label for="title">Title</label>
-                        <input type="text" name="title" class="form-control" placeholder="Enter Title">
+                        <label for="who_we_are">Who We Are</label>
+                        <textarea name="who_we_are" class="form-control" rows="5"></textarea>
+                     </div>
+                     <div class="form-group">
+                        <label for="why_choose_us">Why Choose Us</label>
+                        <textarea name="why_choose_us" class="form-control" rows="5"></textarea>
                      </div>
 
                      <div class="form-group">
                         <label for="description">Description</label>
-                        <textarea name="description" class="form-control" rows="6"></textarea>
+                        <textarea name="description" id="description" class="form-control" rows="6"></textarea>
                      </div>
 
                      <div class="form-group">

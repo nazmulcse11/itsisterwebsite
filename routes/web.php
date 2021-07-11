@@ -3,11 +3,14 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Backend\DashboardController;
 use App\Http\Controllers\Backend\SliderController;
+use App\Http\Controllers\Backend\ClientController;
 use App\Http\Controllers\Backend\AboutController;
 use App\Http\Controllers\Backend\ServiceController;
+use App\Http\Controllers\Backend\TeamController;
 use App\Http\Controllers\Backend\CourseController;
 use App\Http\Controllers\Backend\PostController;
 use App\Http\Controllers\Backend\AdminController;
+use App\Http\Controllers\Backend\SectionController;
 
 
 Route::get('/', function () {
@@ -30,10 +33,10 @@ Route::get('/register', function () {
 Route::group(['prefix'=>'admin','middleware'=>'auth'],function(){
     //dashboard
     Route::get('/dashboard',[DashboardController::class,'dashboard']);
+
+    //Slider Module
     // show slider 
     Route::get('/slider',[SliderController::class,'slider']);
-    
-    //Slider Module
     //add slider
     Route::match(['get','post'],'/add-slider',[SliderController::class,'addSlider']);
     //edit slider
@@ -44,6 +47,16 @@ Route::group(['prefix'=>'admin','middleware'=>'auth'],function(){
     Route::get('/update-slider-status/{id}',[SliderController::class,'updateSliderStatus']);
     //view slider details
     Route::get('/view-slider-details/{id}',[SliderController::class,'viewSliderDetails']);
+
+    //Client Module
+    // show client 
+    Route::get('/client',[ClientController::class,'client']);
+    //add client
+    Route::match(['get','post'],'/add-client',[ClientController::class,'addClient']);
+    //edit client
+    Route::match(['get','post'],'/edit-client/{id}',[ClientController::class,'editClient']);
+    //delete client
+    Route::get('/delete-client/{id}',[ClientController::class,'deleteClient']);
    
 
     //About Module
@@ -108,8 +121,36 @@ Route::group(['prefix'=>'admin','middleware'=>'auth'],function(){
     //add post
     Route::match(['get','post'],'/add-user',[AdminController::class,'addUser']);
 
-     //delete post
+     //delete user
      Route::get('/delete-user/{id}',[AdminController::class,'deleteUser']);
+     //update user details
+     Route::match(['get','post'],'/update-details/{id}',[AdminController::class,'updateDetails']);
+     //update user password
+     Route::match(['get','post'],'/update-password/{id}',[AdminController::class,'updatePassword']);
+
+     //Section Module
+    // show section 
+    Route::get('/section',[SectionController::class,'section']);
+    //add section
+    Route::match(['get','post'],'/add-section',[SectionController::class,'addSection']);
+    //edit section
+      Route::match(['get','post'],'/edit-section/{id}',[SectionController::class,'editSection']);
+    //delete section
+     Route::get('/delete-section/{id}',[SectionController::class,'deleteSection']);
+     //view section details
+     Route::get('/view-section-details/{id}',[SectionController::class,'viewSectionDetails']);
+
+    // /Team Module
+    // show team 
+    Route::get('/team',[TeamController::class,'team']);
+    //add slider
+    Route::match(['get','post'],'/add-team',[TeamController::class,'addTeam']);
+    //edit slider
+    Route::match(['get','post'],'/edit-team/{id}',[TeamController::class,'editTeam']);
+    //delete slider
+    Route::get('/delete-team/{id}',[TeamController::class,'deleteTeam']);
+    //view slider details
+    Route::get('/view-team-details/{id}',[TeamController::class,'viewTeamDetails']);
 });
 
 //Backend routes end

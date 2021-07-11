@@ -1,6 +1,6 @@
 @extends('backend.layout.app')
 
-@section('title','Edit About')
+@section('title','Edit Team')
  
 
 @section('main-content')
@@ -9,12 +9,12 @@
 
    <!-- Page Heading -->
    <div class="d-sm-flex align-items-center justify-content-between mb-4">
-       <h1 class="h3 mb-0 text-gray-800">Edit About</h1>
+       <h1 class="h3 mb-0 text-gray-800">Edit Team</h1>
    </div>
 
    <div class="card shadow mb-4">
       <div class="card-header py-3">
-          <a class="btn btn-primary btn-sm" href="{{ url('admin/about') }}">Back to About</a>
+          <a class="btn btn-primary btn-sm" href="{{ url('admin/team') }}">Back to Team</a>
       </div>
       <div class="card-body">
          <div class="container">
@@ -29,25 +29,29 @@
                         </ul>
                      </div>
                   @endif
-                  <form action="{{url('admin/edit-about/'.$editData['id'] )}}" method="post">
+                  <form action="{{url('admin/edit-team/'.$editData['id'])}}" method="post" enctype="multipart/form-data">
                    @csrf 
                      <div class="form-group">
-                        <label for="who_we_are">Who We Are</label>
-                        <textarea name="who_we_are" class="form-control" rows="6">{{ $editData['who_we_are'] }}</textarea>
+                        <label for="title">Name</label>
+                        <input type="text" name="name" value="{{ $editData['name'] }}" class="form-control" placeholder="Enter Team Member Name">
                      </div>
 
                      <div class="form-group">
-                        <label for="why_choose_us">Why Choose Us</label>
-                        <textarea name="why_choose_us" class="form-control" rows="6">{{ $editData['why_choose_us'] }}</textarea>
+                        <label for="designation">Designation</label>
+                        <input type="text" name="designation" value="{{ $editData['designation'] }}"  class="form-control" placeholder="Enter Designation">
+                     </div>
+                     <div class="form-group">
+                        <label for="designation">Mini Description</label>
+                        <textarea name="mini_description" class="form-control" rows="5" placeholder="Enter Description">{{ $editData['mini_description'] }}</textarea>
                      </div>
 
                      <div class="form-group">
-                        <label for="description">Description</label>
-                        <textarea name="description" id="description" class="form-control" rows="6">{{ $editData['description'] }}</textarea>
+                        <label for="title">Image</label>
+                        <input type="file" name="image" class="form-control">
                      </div>
 
                      <div class="form-group">
-                        <input type="submit" value="Edit About" class="btn btn-primary">
+                        <input type="submit" value="Edit Team" class="btn btn-primary">
                      </div>
 
                   </form>
