@@ -157,4 +157,6 @@ Route::group(['prefix'=>'admin','middleware'=>'auth'],function(){
 
 //Frontend routes start
 Route::get('/', [App\Http\Controllers\Frontend\IndexController::class, 'index']);
+Route::get('/about-us', [App\Http\Controllers\Frontend\IndexController::class, 'aboutUs']);
+Route::get('/{url}', [App\Http\Controllers\Frontend\IndexController::class, 'service']);
 //Frontend routes end
