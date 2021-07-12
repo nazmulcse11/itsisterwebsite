@@ -19,7 +19,7 @@
       <div class="card-body">
          <div class="container">
             <div class="row">
-               <div class="col-md-6">
+               <div class="col-md-12">
                   @if ($errors->any())
                      <div class="alert alert-danger">
                         <ul>
@@ -42,7 +42,7 @@
                      </div>
 
                      <div class="form-group">
-                        <input type="submit" value="Add Section" class="btn btn-primary">
+                        <input type="submit" value="Edit Section" class="btn btn-primary">
                      </div>
 
                   </form>

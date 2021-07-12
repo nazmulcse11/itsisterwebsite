@@ -55,14 +55,6 @@ class ClientController extends Controller
         if($request->isMethod('post')){
             $data = $request->all();
 
-            $rules = [
-                'image'=>'required',
-            ];
-            $customMessage = [
-                'image.required'=>'Client Image is required',
-            ];
-            $this->validate($request,$rules,$customMessage);
-
             $image = $request->file('image');
             if(isset($image)){
                 $deleteOldImage = 'images/client/'.$editData['image'];

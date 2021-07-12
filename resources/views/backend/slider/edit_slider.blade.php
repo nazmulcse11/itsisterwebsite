@@ -19,7 +19,7 @@
       <div class="card-body">
          <div class="container">
             <div class="row">
-               <div class="col-md-6">
+               <div class="col-md-12">
                   @if ($errors->any())
                      <div class="alert alert-danger">
                         <ul>

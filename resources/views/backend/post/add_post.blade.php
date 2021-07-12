@@ -33,12 +33,12 @@
                    @csrf 
                      <div class="form-group">
                         <label for="title">Title</label>
-                        <input type="text" name="title" class="form-control" placeholder="Enter Title">
+                        <input type="text" name="title" value="{{old('title')}}" class="form-control" placeholder="Enter Title">
                      </div>
 
                      <div class="form-group">
                         <label for="url">Url</label>
-                        <input type="text" name="url" class="form-control" placeholder="Enter Url">
+                        <input type="text" name="url" value="{{old('url')}}" class="form-control" placeholder="Enter Url">
                      </div>
 
                      <div class="form-group">
@@ -48,7 +48,7 @@
 
                      <div class="form-group">
                         <label for="description">Description</label>
-                        <textarea name="description" id="description" class="form-control" rows="6"></textarea>
+                        <textarea name="description" id="description" class="form-control" rows="6">{{old('description')}}</textarea>
                      </div>
 
                      <div class="form-group">

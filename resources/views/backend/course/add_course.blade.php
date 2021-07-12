@@ -33,22 +33,22 @@
                    @csrf 
                      <div class="form-group">
                         <label for="title">Title</label>
-                        <input type="text" name="title" class="form-control" placeholder="Enter Title">
+                        <input type="text" name="title" value="{{old('title')}}" class="form-control" placeholder="Enter Title">
                      </div>
 
                      <div class="form-group">
                         <label for="course_fee">Course Fee</label>
-                        <input type="text" name="course_fee" class="form-control" placeholder="Enter Course Fee">
+                        <input type="text" name="course_fee" value="{{old('course_fee')}}" class="form-control" placeholder="Enter Course Fee">
                      </div>
 
                      <div class="form-group">
                         <label for="url">Mini Title</label>
-                        <input type="text" name="mini_title" class="form-control" placeholder="Enter Mini Title">
+                        <input type="text" name="mini_title" value="{{old('mini_title')}}" class="form-control" placeholder="Enter Mini Title">
                      </div>
 
                      <div class="form-group">
                         <label for="description">Description</label>
-                        <textarea name="description" class="form-control" rows="6"></textarea>
+                        <textarea name="description" class="form-control" rows="6">{{old('description')}}</textarea>
                      </div>
 
                      <div class="form-group">

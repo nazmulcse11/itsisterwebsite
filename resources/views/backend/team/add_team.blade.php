@@ -33,16 +33,16 @@
                    @csrf 
                      <div class="form-group">
                         <label for="title">Name</label>
-                        <input type="text" name="name" class="form-control" placeholder="Enter Team Member Name">
+                        <input type="text" name="name" value="{{old('name')}}" class="form-control" placeholder="Enter Team Member Name">
                      </div>
 
                      <div class="form-group">
                         <label for="designation">Designation</label>
-                        <input type="text" name="designation" class="form-control" placeholder="Enter Designation">
+                        <input type="text" name="designation" value="{{old('designation')}}" class="form-control" placeholder="Enter Designation">
                      </div>
                      <div class="form-group">
                         <label for="designation">Mini Description</label>
-                        <textarea name="mini_description" class="form-control" rows="5" placeholder="Enter Description"></textarea>
+                        <textarea name="mini_description" class="form-control" rows="5" placeholder="Enter Description">{{old('mini_description')}}</textarea>
                      </div>
 
                      <div class="form-group">
@@ -51,7 +51,7 @@
                      </div>
 
                      <div class="form-group">
-                        <input type="submit" value="Add Slider" class="btn btn-primary">
+                        <input type="submit" value="Add Team" class="btn btn-primary">
                      </div>
 
                   </form>

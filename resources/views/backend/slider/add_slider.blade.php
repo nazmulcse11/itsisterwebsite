@@ -19,7 +19,7 @@
       <div class="card-body">
          <div class="container">
             <div class="row">
-               <div class="col-md-6">
+               <div class="col-md-12">
                   @if ($errors->any())
                      <div class="alert alert-danger">
                         <ul>
@@ -33,12 +33,12 @@
                    @csrf 
                      <div class="form-group">
                         <label for="title">Title</label>
-                        <input type="text" name="title" class="form-control" placeholder="Enter Title">
+                        <input type="text" name="title" value="{{ old('title') }}" class="form-control" placeholder="Enter Title">
                      </div>
 
                      <div class="form-group">
                         <label for="sub_title">Sub Title</label>
-                        <input type="text" name="sub_title" class="form-control" placeholder="Enter Sub Title">
+                        <input type="text" name="sub_title" value="{{ old('sub_title') }}" class="form-control" placeholder="Enter Sub Title">
                      </div>
 
                      <div class="form-group">

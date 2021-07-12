@@ -13,9 +13,9 @@ use App\Http\Controllers\Backend\AdminController;
 use App\Http\Controllers\Backend\SectionController;
 
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
 
 
 
@@ -154,3 +154,7 @@ Route::group(['prefix'=>'admin','middleware'=>'auth'],function(){
 });
 
 //Backend routes end
+
+//Frontend routes start
+Route::get('/', [App\Http\Controllers\Frontend\IndexController::class, 'index']);
+//Frontend routes end

@@ -33,12 +33,12 @@
                    @csrf 
                      <div class="form-group">
                         <label for="type">Type</label>
-                        <input type="text" name="type" class="form-control" placeholder="Enter Type">
+                        <input type="text" name="type" value="{{ old('type') }}" class="form-control" placeholder="Enter Type">
                      </div>
 
                      <div class="form-group">
                         <label for="mini_description">Mini Description</label>
-                        <textarea name="mini_description" class="form-control" rows="6"></textarea>
+                        <textarea name="mini_description" class="form-control" rows="6">{{ old('mini_description') }}</textarea>
                      </div>
 
                      <div class="form-group">

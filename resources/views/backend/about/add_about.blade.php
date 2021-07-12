@@ -33,16 +33,16 @@
                    @csrf 
                      <div class="form-group">
                         <label for="who_we_are">Who We Are</label>
-                        <textarea name="who_we_are" class="form-control" rows="5"></textarea>
+                        <textarea name="who_we_are" class="form-control" rows="5">{{old('who_we_are')}}</textarea>
                      </div>
                      <div class="form-group">
                         <label for="why_choose_us">Why Choose Us</label>
-                        <textarea name="why_choose_us" class="form-control" rows="5"></textarea>
+                        <textarea name="why_choose_us" class="form-control" rows="5">{{old('why_choose_us')}}</textarea>
                      </div>
 
                      <div class="form-group">
                         <label for="description">Description</label>
-                        <textarea name="description" id="description" class="form-control" rows="6"></textarea>
+                        <textarea name="description" id="description" class="form-control" rows="6">{{old('description')}}</textarea>
                      </div>
 
                      <div class="form-group">

@@ -23,12 +23,13 @@ class AdminController extends Controller
 
             $rules = [
                 'name'=>'required',
-                'email'=>'required|unique:users',
+                'email'=>'required|email|unique:users',
                 'password'=>'required',
             ];
             $customMessage = [
                 'name.required'=>'Name is required',
                 'email.required'=>'Email is required',
+                'email.email'=>'Valid email is required',
                 'email.unique'=>'Email already exists',
                 'password.required'=>'Password is required',
             ];
