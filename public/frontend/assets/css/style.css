@@ -179,7 +179,8 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .navbar a:hover, .navbar .active, .navbar .active:focus, .navbar li:hover > a {
-  color: #47b2e4;
+  /* color: #47b2e4; */
+  color: #000;
 }
 
 .navbar .getstarted {
@@ -387,7 +388,8 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 #hero h2 {
-  color: rgba(255, 255, 255, 0.6);
+  /* color: rgba(255, 255, 255, 0.6); */
+  color:#fff;
   margin-bottom: 50px;
   font-size: 24px;
 }

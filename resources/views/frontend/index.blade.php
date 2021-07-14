@@ -4,7 +4,7 @@
 
  @section('content')
  <!-- ======= Hero Section ======= -->
- <section id="hero" class="d-flex align-items-center">
+ <section style="background:#BAB9B9" id="hero" class="d-flex align-items-center">
 
    <div class="container">
      <div class="row">
@@ -90,7 +90,7 @@
          @foreach($services as $service)
          <div class="col-xl-3 col-md-6 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="100">
           <div class="icon-box">
-            <div class="icon"><i class="{{ $service['icon'] }}"></i> <i class="fas fa-user"></i></div>
+            <div class="icon"><i class="{{ $service['icon'] }}"></i></div>
             <h4><a href="">{{$service['title']}}</a></h4>
             <p>{!! Str::limit($service['description'],100) !!}</p>
             <a class="read-more btn" href="{{$service['url']}}">Read More</a>
@@ -140,10 +140,10 @@
                <span>{{ $team['designation'] }}</span>
                <p><?php echo $team['mini_description'] ?></p>
                <div class="social">
-                 <a href="javascript:void(0)"><i class="ri-twitter-fill"></i></a>
-                 <a href="javascript:void(0)"><i class="ri-facebook-fill"></i></a>
-                 <a href="javascript:void(0)"><i class="ri-instagram-fill"></i></a>
-                 <a href="javascript:void(0)"> <i class="ri-linkedin-box-fill"></i> </a>
+                 <a href="javascript:void(0)"><i class="fab fa-twitter"></i></a>
+                 <a href="javascript:void(0)"><i class="fab fa-facebook"></i></a>
+                 <a href="javascript:void(0)"><i class="fab fa-instagram"></i></a>
+                 <a href="javascript:void(0)"> <i class="fab fa-linkedin"></i> </a>
                </div>
              </div>
            </div>

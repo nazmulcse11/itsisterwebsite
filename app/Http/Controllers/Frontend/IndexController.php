@@ -11,6 +11,7 @@ use App\Models\Service;
 use App\Models\Section;
 use App\Models\Team;
 use App\Models\Course;
+use App\Models\Post;
 
 class IndexController extends Controller
 {
@@ -28,14 +29,29 @@ class IndexController extends Controller
         $courses = Course::where('status','1')->get()->toArray();
         return view('frontend.index',compact('servicee','callToAction','team','course','slider','clients','about','services','teams','courses'));
     }
-
+    
+    // show about us details
     public function aboutUs(){
         $about = About::select('description')->get()->first()->toArray();
         return view('frontend.about_us',compact('about'));
     }
-
+    
+    // show service details
     public function service($url=null){
-        $service = Service::select('description')->where('url',$url)->get()->first()->toArray();
+        $service = Service::select('title','description')->where('url',$url)->get()->first()->toArray();
         return view('frontend.service',compact('service'));
+    }
+   
+    // show all blog posts
+    public function blog(){
+        $posts = Post::where('status','1')->get()->toArray();
+        return view('frontend.all_post',compact('posts'));
+    }
+
+    // post details
+    public function postDetails($url=null){
+        $postDetails = Post::where('url',$url)->first()->toArray();
+        $relatedPost = Post::inRandomOrder()->take(10)->get()->toArray();
+        return view('frontend.post_details',compact('postDetails','relatedPost'));
     }
 }

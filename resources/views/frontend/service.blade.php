@@ -20,9 +20,14 @@
       <section id="contact" class="contact">
         <div class="container" data-aos="fade-up">
           <div class="row">
-            <div class="col-sm-12">
+
+            <div class="section-title">
+              <h2>{{ $service['title'] }}</h2>
+            </div>
+
                {!! $service['description'] !!}
             </div>
+
           </div>
         </div>
       </section>
