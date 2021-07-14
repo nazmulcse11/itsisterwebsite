@@ -1,6 +1,8 @@
 @extends('frontend.layout.app')
 
-@section('title','Post Details')
+@section('title')
+{{ $postDetails['title'] }}
+@endsection
 
 @section('content')
 
@@ -23,7 +25,7 @@
         <div class="row gy-4">
 
           <div class="col-lg-8">
-              <h2 class="text-center mb-3">{{ $postDetails['title'] }}</h2>
+              <h2 class="mb-3">{{ $postDetails['title'] }}</h2>
               <img src="{{ url('images/post/'.$postDetails['image']) }}">
               <p style="text-align:justify" class="mt-3"> {!! $postDetails['description'] !!}</p> 
           </div>
@@ -39,11 +41,12 @@
                @endforeach
               </ul>
             </div>
-            <div class="post-description">
-              <h2>This is an example of post detail</h2>
-              <p> Autem ipsum nam porro corporis rerum. Quis eos dolorem eos itaque inventore commodi labore quia quia.</p>
+
+            {{-- <div class="post-description">
+              <h2>Title</h2>
+              <p>descrption</p>
             </div>
-          </div>
+          </div> --}}
 
         </div>
 

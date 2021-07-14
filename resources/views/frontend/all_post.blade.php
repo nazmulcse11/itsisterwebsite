@@ -25,15 +25,17 @@
         </div>
 
         <div class="row">
+          @if(!empty($posts))
           @foreach($posts as $post)
-          <div class="col-xl-3 col-md-6 d-flex align-items-stretch mb-5">
+          <div class="col-lg-4 col-md-6 d-flex align-items-stretch mb-5">
             <div class="icon-box">
-              <h4><a href="">{{$post['title']}}</a></h4>
+              <h4><a href="{{ url('/blog/'.$post['url']) }}">{{$post['title']}}</a></h4>
               <p>{!! Str::limit($post['description'],100) !!}</p>
-              <a class="read-more btn" href="{{$post['url']}}">Read More</a>
+              <a class="read-more btn" href="{{ url('/blog/'.$post['url']) }}">Read More</a>
             </div>
           </div>
           @endforeach
+          @endif
 
         </div>
 

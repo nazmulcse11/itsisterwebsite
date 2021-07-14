@@ -12,7 +12,7 @@
          <h1>{{ $slider['title'] }}</h1>
          <h2>{{ $slider['sub_title'] }}</h2>
          <div class="d-flex justify-content-center justify-content-lg-start">
-           <a href="javascript:void(0)" class="btn-get-started scrollto">Get Started</a>
+           <a href="{{ url('/contact-us') }}" class="btn-get-started scrollto">Get Started</a>
            {{-- <a href="https://www.youtube.com/watch?v=jDDaplaOz7Q" class="glightbox btn-watch-video"><i class="bi bi-play-circle"></i><span>Watch Video</span></a> --}}
          </div>
        </div>
@@ -91,9 +91,9 @@
          <div class="col-xl-3 col-md-6 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="100">
           <div class="icon-box">
             <div class="icon"><i class="{{ $service['icon'] }}"></i></div>
-            <h4><a href="">{{$service['title']}}</a></h4>
+            <h4><a href="{{ url('/service/'.$service['url']) }}">{{$service['title']}}</a></h4>
             <p>{!! Str::limit($service['description'],100) !!}</p>
-            <a class="read-more btn" href="{{$service['url']}}">Read More</a>
+            <a class="read-more btn" href="{{ url('/service/'.$service['url'])}}">Read More</a>
           </div>
         </div>
         @endforeach

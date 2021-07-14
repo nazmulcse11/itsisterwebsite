@@ -5,11 +5,33 @@
       <div class="container">
         <div class="row justify-content-center">
           <div class="col-lg-6">
-            <h4>Join Our Newsletter</h4>
-            <p>Tamen quem nulla quae legam multos aute sint culpa legam noster magna</p>
-            <form action="" method="post">
-              <input type="email" name="email"><input type="submit" value="Subscribe">
+
+            @if(Session::has('success_message'))
+            <div class="alert alert-success alert-dismissible fade show mt-3" role="alert">
+               {{ Session::get('success_message') }}
+               <button type="button" class="close" data-bs-dismiss="alert" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+               </button>
+            </div>
+            @endif
+
+            @if(Session::has('error_message'))
+            <div class="alert alert-danger alert-dismissible fade show mt-3" role="alert">
+               {{ Session::get('error_message') }}
+               <button type="button" class="close" data-bs-dismiss="alert" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+               </button>
+            </div>
+            @endif
+
+            <h4>Stay Connected With Us</h4>
+            <p>Subscribe us for getting our latest course offer and services </p>
+
+            <form id="emailForm" action="{{ url('/subscribe-us') }}" method="post">
+              @csrf
+              <input type="email" id="email" name="email"><input type="submit" value="Subscribe">
             </form>
+
           </div>
         </div>
       </div>
@@ -22,43 +44,44 @@
           <div class="col-lg-3 col-md-6 footer-contact">
             <h3>IT-Sister</h3>
             <p>
-              44/3, North Dhanmondi <br>
-              Panthapath, Dhaka<br>
+              Barashar Burichong <br>
+              Cumilla<br>
               Bangladesh<br><br>
-              <strong>Phone:</strong> +1 5589 55488 55<br>
-              <strong>Email:</strong> info@example.com<br>
+              <strong>Phone:</strong> 01638-926758<br>
+              <strong>Email:</strong> info@itsistercomputers.com<br>
             </p>
           </div>
 
           <div class="col-lg-3 col-md-6 footer-links">
             <h4>Useful Links</h4>
             <ul>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Home</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">About us</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Services</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Blog</a></li>
+              <li><i class="fas fa-angle-right"></i> <a href="{{ url('/') }}">Home</a></li>
+              <li><i class="fas fa-angle-right"></i> <a href="{{ url('/about-us') }}">About us</a></li>
+              <li><i class="fas fa-angle-right"></i> <a href="{{ url('/blog/all-posts') }}">Blog</a></li>
+              <li><i class="fas fa-angle-right"></i> <a href="{{ url('/contact-us') }}">Contact</a></li>
             </ul>
           </div>
 
           <div class="col-lg-3 col-md-6 footer-links">
             <h4>Our Services</h4>
             <ul>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Web Design</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Web Development</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Marketing</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Graphic Design</a></li>
+              @if(!empty($footerServices))
+                @foreach($footerServices as $serv)
+                <li><i class="fas fa-angle-right"></i> <a href="{{ url('/service/'.$serv['url']) }}">{{ $serv['title'] }}</a></li>
+                @endforeach
+              @endif
             </ul>
           </div>
 
           <div class="col-lg-3 col-md-6 footer-links">
             <h4>Our Social Networks</h4>
-            <p>Cras fermentum odio eu feugiat lide par naso tierra videa magna derita valies</p>
+            <p>Follow us on </p>
             <div class="social-links mt-3">
-              <a href="#" class="twitter"><i class="fab fa-twitter"></i></a>
-              <a href="#" class="facebook"><i class="fab fa-facebook"></i></a>
-              <a href="#" class="instagram"><i class="fab fa-instagram"></i></a>
-              <a href="#" class="google-plus"><i class="fab fa-skype"></i></a>
-              <a href="#" class="linkedin"><i class="fab fa-linkedin"></i></a>
+              <a href="javascript:void(0)" class="twitter"><i class="fab fa-twitter"></i></a>
+              <a href="javascript:void(0)" class="facebook"><i class="fab fa-facebook"></i></a>
+              <a href="javascript:void(0)" class="instagram"><i class="fab fa-instagram"></i></a>
+              <a href="javascript:void(0)" class="google-plus"><i class="fab fa-skype"></i></a>
+              <a href="javascript:void(0)" class="linkedin"><i class="fab fa-linkedin"></i></a>
             </div>
           </div>
 

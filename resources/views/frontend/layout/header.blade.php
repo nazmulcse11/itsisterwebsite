@@ -8,19 +8,19 @@
       
       <nav id="navbar" class="navbar">
         <ul>
-          @if(!empty($slider['image'])) 
+          @if(!empty($slider) || !empty($about)) 
           <li><a class="nav-link scrollto active" href="#hero">Home</a></li>
           <li><a class="nav-link scrollto" href="#about">About</a></li>
           <li><a class="nav-link scrollto" href="#services">Services</a></li>
           <li><a class="nav-link scrollto" href="#team">Team</a></li>
           <li><a class="nav-link scrollto"  href="#pricing">Courses</a></li>
           <li><a class="nav-link scrollto" href="{{ url('/blog/all-posts') }}">Blog</a></li>
-          <li><a class="nav-link scrollto" href="contact.html">Contact</a></li>
+          <li><a class="nav-link scrollto" href="{{ url('/contact-us')}}">Contact</a></li>
           @else 
             <li><a class="nav-link scrollto active" href="{{url('/')}}">Home</a></li>
             <li><a class="nav-link scrollto" href="{{url('/about-us')}}">About</a></li>
             <li><a class="nav-link scrollto" href="{{ url('/blog/all-posts') }}">Blog</a></li>
-            <li><a class="nav-link scrollto" href="contact.html">Contact</a></li>
+            <li><a class="nav-link scrollto" href="{{ url('/contact-us')}}">Contact</a></li>
           @endif    
         </ul> 
         <i class="bi bi-list mobile-nav-toggle"></i>

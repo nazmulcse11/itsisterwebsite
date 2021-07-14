@@ -158,7 +158,10 @@ Route::group(['prefix'=>'admin','middleware'=>'auth'],function(){
 //Frontend routes start
 Route::get('/', [App\Http\Controllers\Frontend\IndexController::class, 'index']);
 Route::get('/about-us', [App\Http\Controllers\Frontend\IndexController::class, 'aboutUs']);
-Route::get('/{url}', [App\Http\Controllers\Frontend\IndexController::class, 'service']);
+Route::get('/service/{url}', [App\Http\Controllers\Frontend\IndexController::class, 'service']);
 Route::get('/blog/all-posts', [App\Http\Controllers\Frontend\IndexController::class, 'blog']);
 Route::get('/blog/{url}', [App\Http\Controllers\Frontend\IndexController::class, 'postDetails']);
+Route::post('/subscribe-us', [App\Http\Controllers\Frontend\IndexController::class, 'subscribeUs']);
+Route::match(['get','post'],'/contact-us', [App\Http\Controllers\Frontend\IndexController::class, 'contactUs']);
+
 //Frontend routes end
