@@ -33,6 +33,9 @@ Route::get('/register', function () {
 Route::group(['prefix'=>'admin','middleware'=>'auth'],function(){
     //dashboard
     Route::get('/dashboard',[DashboardController::class,'dashboard']);
+    Route::get('/view-contact-details/{id}',[DashboardController::class,'viewContactDetails']);
+    Route::get('/delete-contact/{id}',[DashboardController::class,'deleteContact']);
+    Route::get('/delete-email/{id}',[DashboardController::class,'deleteEmail']);
 
     //Slider Module
     // show slider 

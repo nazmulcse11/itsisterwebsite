@@ -1,6 +1,6 @@
  @extends('frontend.layout.app')
 
- @section('title','Index')
+ @section('title','itsister-Provides web development services and best courses')
 
  @section('content')
  <!-- ======= Hero Section ======= -->

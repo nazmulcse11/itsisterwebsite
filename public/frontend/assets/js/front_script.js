@@ -13,7 +13,7 @@ $(document).ready(function(){
          data:{email:email},
          success:function(data){
             if(data.status == 'success'){
-               alert('Subscription Successfully Added');
+               alert('Subscription Successfully Added. Thanks');
                $('#emailForm')['0'].reset();
             }
  
@@ -42,7 +42,7 @@ $(document).ready(function(){
          data:{name:name,email:email,subject:subject,message:message},
          success:function(data){
             if(data.status == 'success'){
-               alert('Your Message Successfully Sent');
+               alert('Your Message Successfully Sent. Thanks');
                $('#contactForm')['0'].reset();
             }
  
